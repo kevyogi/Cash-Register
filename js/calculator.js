@@ -1,23 +1,32 @@
-console.log("sanity check");
+
 
 var Calculator = (function(){
+  var memory = 0;
   var total = 0;
   var balance = 0;
 
+  function setMemory(num){
+    memory = num;
+  }
+
   function add(num){
     total += num;
+    return total;
   }
 
   function subtract(num){
     total -= num;
+    return total;
   }
 
   function multiply(num){
     total *= num;
+    return total;
   }
 
   function divide(num){
     total /= num;
+    return total;
   }
 
   function getTotal(){
@@ -49,6 +58,7 @@ var Calculator = (function(){
   }
 
   return {
+    setMemory: setMemory,
     add: add,
     subtract: subtract,
     multiply: multiply,
@@ -61,4 +71,4 @@ var Calculator = (function(){
     withdraw: withdraw
   };
 
-});
+})();
