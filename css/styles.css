@@ -1,0 +1,72 @@
+#theHead{
+  text-align: center;
+}
+
+#theBody{
+  text-align: center;
+}
+
+#display{
+  text-align: center;
+}
+
+.numButLeft{
+  display: inline-block;
+  float: left;
+}
+
+.numBut{
+  display: inline-block;
+  text-align: center;
+  margin-left: 27px;
+}
+
+.numButRight{
+  display: inline-block;
+  text-align: center;
+}
+
+#add{
+  display: inline-block;
+  text-align: center;
+}
+
+#subtract{
+  display: inline-block;
+  text-align: center;
+}
+
+#multiply{
+  display: inline-block;
+  text-align: center;
+}
+
+#divide{
+  display: inline-block;
+  text-align: center;
+
+}
+
+#equals{
+  display: inline-block;
+}
+
+#clear{
+  display: inline-block;
+  float: right;
+}
+
+#balance{
+  display: inline-block;
+  float: right;
+}
+
+#deposit{
+  display: inline-block;
+  float: right;
+}
+
+#withdraw{
+  display: inline-block;
+  float: right;
+}
