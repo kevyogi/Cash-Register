@@ -4,6 +4,8 @@ var cashRegister = (function(){
 
   var display = document.getElementById("display");
   var numButtons = document.getElementsByClassName("numBut");
+  var numButLeft = document.getElementsByClassName("numButLeft");
+  var numButRight = document.getElementsByClassName("numButRight");
   var addButton = document.getElementById("add");
   var subButton = document.getElementById("subtract");
   var multiButton = document.getElementById("multiply");
@@ -16,6 +18,12 @@ var cashRegister = (function(){
 
   for(var i = 0; i < numButtons.length; i++){
     numButtons[i].addEventListener("click", showNumber);
+  }
+  for(var j = 0; j < numButLeft.length; j++){
+    numButLeft[j].addEventListener("click", showNumber);
+  }
+  for(var k = 0; k < numButRight.length; k++){
+    numButRight[k].addEventListener("click", showNumber);
   }
 
   clearButton.addEventListener("click", clearDisplay);
@@ -84,13 +92,17 @@ var cashRegister = (function(){
   function deposit(){
     var test = parseFloat(display.innerHTML);
     Calculator.deposit(test);
+    Calculator.clearTotal();
     display.innerHTML = 0;
+    // count = 1;
   }
 
   function withdraw(){
     var test = parseFloat(display.innerHTML);
     Calculator.withdraw(test);
+    Calculator.clearTotal();
     display.innerHTML = 0;
+    // count = 1;
   }
 
 })();
