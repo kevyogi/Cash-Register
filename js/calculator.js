@@ -24,6 +24,10 @@ var Calculator = (function(){
     return total;
   }
 
+  function setTotal(num){
+    total = num;
+  }
+
   function getTotal(){
     return total;
   }
@@ -57,6 +61,7 @@ var Calculator = (function(){
     subtract: subtract,
     multiply: multiply,
     divide: divide,
+    setTotal: setTotal,
     getTotal: getTotal,
     clearTotal: clearTotal,
     getBalance: getBalance,
