@@ -1,13 +1,8 @@
 
 
 var Calculator = (function(){
-  var memory = 0;
   var total = 0;
   var balance = 0;
-
-  function setMemory(num){
-    memory = num;
-  }
 
   function add(num){
     total += num;
@@ -58,7 +53,6 @@ var Calculator = (function(){
   }
 
   return {
-    setMemory: setMemory,
     add: add,
     subtract: subtract,
     multiply: multiply,

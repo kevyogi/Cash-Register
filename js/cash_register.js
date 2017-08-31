@@ -1,7 +1,9 @@
 
 var cashRegister = (function(){
+  var count = 0;
 
   var display = document.getElementById("display");
+  var display1 = document.getElementById("display1");
   var numButtons = document.getElementsByClassName("numBut");
   var addButton = document.getElementById("add");
   var subButton = document.getElementById("subtract");
@@ -27,6 +29,8 @@ var cashRegister = (function(){
   depositButton.addEventListener("click", deposit);
   withdrawButton.addEventListener("click", withdraw);
 
+  console.log(Calculator.getTotal());
+
   function displayTotal(){
     Calculator.getTotal();
     display.innerHTML = Calculator.getTotal();
@@ -34,26 +38,29 @@ var cashRegister = (function(){
 
   function addition(){
     var test = parseFloat(display.innerHTML);
-    display.innerHTML = 0;
-    Calculator.add(test);
+    var myVar = Calculator.add(test);
+    display.innerHTML = myVar;
+    count = 1;
   }
 
   function subtraction(){
     var test = parseFloat(display.innerHTML);
-    display.innerHTML = 0;
-    Calculator.subtract(test);
+    var myVar = Calculator.subtract(test);
+    display.innerHTML = myVar;
+    count = 1;
   }
 
   function multiplication(){
     var test = parseFloat(display.innerHTML);
-    display.innerHTML = 0;
-    Calculator.multiply(test);
+    var myVar = Calculator.multiply(test);
+    display.innerHTML = myVar;
+    count = 1;
   }
 
   function division(){
     var test = parseFloat(display.innerHTML);
-    display.innerHTML = 0;
-    Calculator.divide(test);
+    var myVar = Calculator.divide(test);
+    count = 1;
   }
 
   function clearDisplay(){
@@ -66,7 +73,13 @@ var cashRegister = (function(){
   }
 
   function showNumber(){
-    display.innerHTML += this.innerHTML;
+    if(count === 0){
+      display.innerHTML += this.innerHTML;
+    }else if(count === 1){
+      display.innerHTML = 0;
+      display.innerHTML += this.innerHTML;
+      count = 0;
+    }
   }
 
   function deposit(){
