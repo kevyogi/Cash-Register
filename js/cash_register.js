@@ -3,7 +3,6 @@ var cashRegister = (function(){
   var count = 0;
 
   var display = document.getElementById("display");
-  var display1 = document.getElementById("display1");
   var numButtons = document.getElementsByClassName("numBut");
   var addButton = document.getElementById("add");
   var subButton = document.getElementById("subtract");
@@ -29,37 +28,37 @@ var cashRegister = (function(){
   depositButton.addEventListener("click", deposit);
   withdrawButton.addEventListener("click", withdraw);
 
-  console.log(Calculator.getTotal());
-
   function displayTotal(){
     Calculator.getTotal();
     display.innerHTML = Calculator.getTotal();
+    count = 1;
   }
 
   function addition(){
-    var test = parseFloat(display.innerHTML);
-    var myVar = Calculator.add(test);
-    display.innerHTML = myVar;
+    var toNum = parseFloat(display.innerHTML);
+    var addNum = Calculator.add(toNum);
+    display.innerHTML = addNum;
     count = 1;
   }
 
   function subtraction(){
-    var test = parseFloat(display.innerHTML);
-    var myVar = Calculator.subtract(test);
-    display.innerHTML = myVar;
+    var toNum = parseFloat(display.innerHTML);
+    var subNum = Calculator.subtract(toNum);
+    display.innerHTML = subNum;
     count = 1;
   }
 
   function multiplication(){
-    var test = parseFloat(display.innerHTML);
-    var myVar = Calculator.multiply(test);
-    display.innerHTML = myVar;
+    var toNum = parseFloat(display.innerHTML);
+    var mulNum = Calculator.multiply(toNum);
+    display.innerHTML = mulNum;
     count = 1;
   }
 
   function division(){
-    var test = parseFloat(display.innerHTML);
-    var myVar = Calculator.divide(test);
+    var toNum = parseFloat(display.innerHTML);
+    var divNum = Calculator.divide(toNum);
+    display.innerHTML = divNum;
     count = 1;
   }
 
@@ -93,11 +92,5 @@ var cashRegister = (function(){
     Calculator.withdraw(test);
     display.innerHTML = 0;
   }
-
-
-
-
-
-
 
 })();
