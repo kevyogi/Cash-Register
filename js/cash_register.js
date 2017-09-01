@@ -1,8 +1,8 @@
-
 var cashRegister = (function(){
   var count = 0;
   var memory = [];
 
+  var display1 = document.getElementById("display1");
   var display = document.getElementById("display");
   var numButtons = document.getElementsByClassName("numBut");
   var numButLeft = document.getElementsByClassName("numButLeft");
@@ -70,6 +70,7 @@ var cashRegister = (function(){
   function addition(){
     var toNum = parseFloat(display.innerHTML);
     memory.push(toNum, "+");
+    display1.innerHTML += "+";
     // memory.push("+");
     console.log(memory);
     // var addNum = Calculator.add(toNum);
@@ -81,6 +82,7 @@ var cashRegister = (function(){
     var toNum = parseFloat(display.innerHTML);
     memory.push(toNum);
     memory.push("-");
+    display1.innerHTML += "-";
     console.log(memory);
     // var subNum = Calculator.subtract(toNum);
     // display.innerHTML = subNum;
@@ -91,6 +93,7 @@ var cashRegister = (function(){
     var toNum = parseFloat(display.innerHTML);
     memory.push(toNum);
     memory.push("x");
+    display1.innerHTML += "x";
     console.log(memory);
     // var mulNum = Calculator.multiply(toNum);
     // display.innerHTML = mulNum;
@@ -101,6 +104,7 @@ var cashRegister = (function(){
     var toNum = parseFloat(display.innerHTML);
     memory.push(toNum);
     memory.push("÷");
+    display1.innerHTML += "÷";
     console.log(memory);
     // var divNum = Calculator.divide(toNum);
     // display.innerHTML = divNum;
@@ -111,6 +115,7 @@ var cashRegister = (function(){
     // display.innerHTML = Calculator.clearTotal(memory);
     memory = [];
     display.innerHTML = 0;
+    display1.innerHTML = 0;
   }
 
   function showBalance(){
@@ -121,9 +126,11 @@ var cashRegister = (function(){
   function showNumber(){
     if(count === 0){
       display.innerHTML += this.innerHTML;
+      display1.innerHTML += this.innerHTML;
     }else if(count === 1){
       display.innerHTML = "";
       display.innerHTML += this.innerHTML;
+      display1.innerHTML += this.innerHTML;
       count = 0;
     }
   }
