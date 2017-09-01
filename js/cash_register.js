@@ -46,20 +46,6 @@ var cashRegister = (function(){
       Calculator.divide(memory);
       Calculator.add(memory);
       Calculator.subtract(memory);
-      // for(var j = 0; j < memory.length; j++){
-      //   if(memory[j] === "x"){
-      //     memory.splice((j-1), 3, (memory[j-1] * memory[j+1]));
-      //   }else if(memory[j] === "÷"){
-      //     memory.splice((j-1), 3, (memory[j-1] / memory[j+1]));
-      //   }
-      //   for(var m = 0; m < memory.length; m++){
-      //     if(memory[i] === "+"){
-      //       memory.splice((i-1), 3, (memory[i-1] + memory[i+1]));
-      //     }else if(memory[i] === "-"){
-      //       memory.splice((i-1), 3, (memory[i-1] - memory[i+1]));
-      //     }
-      //   }
-      // }
       display.innerHTML = parseFloat(memory);
     }
     // display.innerHTML = parseFloat(memory);
@@ -125,7 +111,9 @@ var cashRegister = (function(){
 
   function showNumber(){
     if(count === 0){
+      display.innerHTML = "";
       display.innerHTML += this.innerHTML;
+      display1.innerHTML = "";
       display1.innerHTML += this.innerHTML;
     }else if(count === 1){
       display.innerHTML = "";
