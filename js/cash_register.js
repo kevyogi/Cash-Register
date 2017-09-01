@@ -125,6 +125,7 @@ var cashRegister = (function(){
     Calculator.deposit(test);
     Calculator.clearTotal();
     display.innerHTML = 0;
+    display1.innerHTML = 0;
     // count = 1;
   }
 
@@ -133,6 +134,7 @@ var cashRegister = (function(){
     Calculator.withdraw(test);
     Calculator.clearTotal();
     display.innerHTML = 0;
+    display1.innerHTML = 0;
     // count = 1;
   }
 
