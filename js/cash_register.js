@@ -1,6 +1,5 @@
 var cashRegister = (function(){
   var count = 0;
-  var canPress = false;
   var memory = [];
 
   var display1 = document.getElementById("display1");
@@ -40,14 +39,27 @@ var cashRegister = (function(){
 
   function displayTotal(){
     var toNum = parseFloat(display.innerHTML);
-    memory.push(toNum);
-    console.log(memory);
-    for(var i = 0; i < memory.length; i++){
-      Calculator.multiply(memory);
-      Calculator.divide(memory);
-      Calculator.add(memory);
-      Calculator.subtract(memory);
-      display.innerHTML = parseFloat(memory);
+    console.log(typeof toNum);
+    console.log(toNum);
+    if(!isNaN(toNum)){
+      memory.push(toNum);
+      console.log(memory);
+      for(var i = 0; i < memory.length; i++){
+        Calculator.multiply(memory);
+        Calculator.divide(memory);
+        Calculator.add(memory);
+        Calculator.subtract(memory);
+        display.innerHTML = parseFloat(memory);
+      }
+    }else if(isNaN(toNum)){
+      memory.splice((memory.length - 1), 1);
+      for(var p = 0; p < memory.length; p++){
+        Calculator.multiply(memory);
+        Calculator.divide(memory);
+        Calculator.add(memory);
+        Calculator.subtract(memory);
+        display.innerHTML = parseFloat(memory);
+      }
     }
     count = 1;
     memory = [];
@@ -58,6 +70,7 @@ var cashRegister = (function(){
     if(count === 0){
       memory.push(toNum, "+");
       display1.innerHTML += "+";
+      display.innerHTML = "";
     }
     console.log(memory);
     count = 1;
@@ -69,6 +82,7 @@ var cashRegister = (function(){
     if(count === 0){
       memory.push(toNum, "-");
       display1.innerHTML += "-";
+      display.innerHTML = "";
     }
     console.log(memory);
     count = 1;
@@ -79,6 +93,7 @@ var cashRegister = (function(){
     if(count === 0){
       memory.push(toNum, "x");
       display1.innerHTML += "x";
+      display.innerHTML = "";
     }
     console.log(memory);
     count = 1;
@@ -89,13 +104,14 @@ var cashRegister = (function(){
     if(count === 0){
       memory.push(toNum, "÷");
       display1.innerHTML += "÷";
+      display.innerHTML = "";
     }    
     console.log(memory);
     count = 1;
   }
 
   function clearDisplay(){
-    memory = [];
+    Calculator.clearTotal(memory);
     display.innerHTML = 0;
     display1.innerHTML = 0;
     count = 1;

@@ -36,14 +36,6 @@ var Calculator = (function(){
     }
   }
 
-  function setTotal(num){
-    total = num;
-  }
-
-  function getTotal(){
-    return memory;
-  }
-
   function clearTotal(arr){
     arr = [];
   }
@@ -72,8 +64,6 @@ var Calculator = (function(){
     subtract: subtract,
     multiply: multiply,
     divide: divide,
-    setTotal: setTotal,
-    getTotal: getTotal,
     clearTotal: clearTotal,
     getBalance: getBalance,
     clearBalance: clearBalance,

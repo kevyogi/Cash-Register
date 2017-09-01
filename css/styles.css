@@ -4,21 +4,27 @@
 
 #theBody{
   text-align: center;
+  font-size: 30px;
+  font-family: 'Baloo Tammudu', cursive;
 }
 
 #display{
+  text-align: center;
+  
+}
+
+#display1{
   text-align: center;
 }
 
 .numButLeft{
   display: inline-block;
-  float: left;
+
 }
 
 .numBut{
   display: inline-block;
   text-align: center;
-  margin-left: 27px;
 }
 
 .numButRight{
@@ -53,20 +59,20 @@
 
 #clear{
   display: inline-block;
-  float: right;
+
 }
 
 #balance{
   display: inline-block;
-  float: right;
+
 }
 
 #deposit{
   display: inline-block;
-  float: right;
+
 }
 
 #withdraw{
   display: inline-block;
-  float: right;
+
 }
