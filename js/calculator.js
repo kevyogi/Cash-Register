@@ -1,27 +1,39 @@
 
 
 var Calculator = (function(){
-  var total = 0;
   var balance = 0;
 
-  function add(num){
-    total += num;
-    return total;
+
+  function add(arr){
+    for(var p = 0; p < arr.length; p++){
+      if(arr[p] === "+"){
+      arr.splice((p-1), 3, (arr[p-1] + arr[p+1]));
+      }
+    }
   }
 
-  function subtract(num){
-    total -= num;
-    return total;
+  function subtract(arr){
+    for(var p = 0; p < arr.length; p++){
+      if(arr[p] === "-"){
+      arr.splice((p-1), 3, (arr[p-1] - arr[p+1]));
+      }
+    }
   }
 
-  function multiply(num){
-    total *= num;
-    return total;
+  function multiply(arr){
+    for(var p = 0; p < arr.length; p++){
+      if(arr[p] === "x"){
+      arr.splice((p-1), 3, (arr[p-1] * arr[p+1]));
+      }
+    }
   }
 
-  function divide(num){
-    total /= num;
-    return total;
+  function divide(arr){
+    for(var p = 0; p < arr.length; p++){
+      if(arr[p] === "÷"){
+      arr.splice((p-1), 3, (arr[p-1] / arr[p+1]));
+      }
+    }
   }
 
   function setTotal(num){
@@ -29,12 +41,11 @@ var Calculator = (function(){
   }
 
   function getTotal(){
-    return total;
+    return memory;
   }
 
-  function clearTotal(){
-    total = 0;
-    return total;
+  function clearTotal(arr){
+    arr = [];
   }
 
   function getBalance(){

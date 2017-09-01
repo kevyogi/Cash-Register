@@ -42,20 +42,24 @@ var cashRegister = (function(){
     memory.push(toNum);
     console.log(memory);
     for(var i = 0; i < memory.length; i++){
-      for(var j = 0; j < memory.length; j++){
-        if(memory[j] === "x"){
-          memory.splice((j-1), 3, (memory[j-1] * memory[j+1]));
-        }else if(memory[j] === "÷"){
-          memory.splice((j-1), 3, (memory[j-1] / memory[j+1]));
-        }
-        for(var m = 0; m < memory.length; m++){
-          if(memory[i] === "+"){
-            memory.splice((i-1), 3, (memory[i-1] + memory[i+1]));
-          }else if(memory[i] === "-"){
-            memory.splice((i-1), 3, (memory[i-1] - memory[i+1]));
-          }
-        }
-      }
+      Calculator.multiply(memory);
+      Calculator.divide(memory);
+      Calculator.add(memory);
+      Calculator.subtract(memory);
+      // for(var j = 0; j < memory.length; j++){
+      //   if(memory[j] === "x"){
+      //     memory.splice((j-1), 3, (memory[j-1] * memory[j+1]));
+      //   }else if(memory[j] === "÷"){
+      //     memory.splice((j-1), 3, (memory[j-1] / memory[j+1]));
+      //   }
+      //   for(var m = 0; m < memory.length; m++){
+      //     if(memory[i] === "+"){
+      //       memory.splice((i-1), 3, (memory[i-1] + memory[i+1]));
+      //     }else if(memory[i] === "-"){
+      //       memory.splice((i-1), 3, (memory[i-1] - memory[i+1]));
+      //     }
+      //   }
+      // }
       display.innerHTML = parseFloat(memory);
     }
     // display.innerHTML = parseFloat(memory);
@@ -104,8 +108,9 @@ var cashRegister = (function(){
   }
 
   function clearDisplay(){
-    display.innerHTML = Calculator.clearTotal();
+    // display.innerHTML = Calculator.clearTotal(memory);
     memory = [];
+    display.innerHTML = 0;
   }
 
   function showBalance(){
