@@ -52,6 +52,7 @@ var cashRegister = (function(){
         display.innerHTML = parseFloat(memory);
       }
     }else if(isNaN(toNum)){
+      display1.innerHTML = display1.innerHTML.substring(0, (display1.innerHTML.length - 1));
       memory.splice((memory.length - 1), 1);
       for(var p = 0; p < memory.length; p++){
         Calculator.multiply(memory);
@@ -61,7 +62,7 @@ var cashRegister = (function(){
         display.innerHTML = parseFloat(memory);
       }
     }
-    count = 1;
+    count = 0;
     memory = [];
   }
 
@@ -70,7 +71,7 @@ var cashRegister = (function(){
     if(count === 0){
       memory.push(toNum, "+");
       display1.innerHTML += "+";
-      display.innerHTML = "";
+      display.innerHTML = "+";
     }
     console.log(memory);
     count = 1;
