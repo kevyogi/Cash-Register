@@ -41,37 +41,32 @@ var cashRegister = (function(){
     var toNum = parseFloat(display.innerHTML);
     memory.push(toNum);
     console.log(memory);
-    var result = 0;
     for(var i = 0; i < memory.length; i++){
       for(var j = 0; j < memory.length; j++){
-        if(memory[i] === "x"){
-          memory.splice((i-1), 3, (memory[i-1] * memory[i+1]));
-          console.log(memory);
-        }else if(memory[i] === "-"){
-          memory.splice((i-1), 3, (memory[i-1] - memory[i+1]));
-          result = memory[i-1] - memory[i+1];
-          console.log(memory);
-        }else if(memory[i] === "+"){
-          memory.splice((i-1), 3, (memory[i-1] + memory[i+1]));
-          console.log(memory);
-        }else if(memory[i] === "÷"){
-          memory.splice((i-1), 3, (memory[i-1] / memory[i+1]));
-          console.log(memory);
+        if(memory[j] === "x"){
+          memory.splice((j-1), 3, (memory[j-1] * memory[j+1]));
+        }else if(memory[j] === "÷"){
+          memory.splice((j-1), 3, (memory[j-1] / memory[j+1]));
+        }
+        for(var m = 0; m < memory.length; m++){
+          if(memory[i] === "+"){
+            memory.splice((i-1), 3, (memory[i-1] + memory[i+1]));
+          }else if(memory[i] === "-"){
+            memory.splice((i-1), 3, (memory[i-1] - memory[i+1]));
+          }
         }
       }
-      
       display.innerHTML = parseFloat(memory);
     }
-    // Calculator.getTotal();
-    // display.innerHTML = Calculator.getTotal();
+    // display.innerHTML = parseFloat(memory);
     count = 1;
     memory = [];
   }
 
   function addition(){
     var toNum = parseFloat(display.innerHTML);
-    memory.push(toNum);
-    memory.push("+");
+    memory.push(toNum, "+");
+    // memory.push("+");
     console.log(memory);
     // var addNum = Calculator.add(toNum);
     // display.innerHTML = addNum;
