@@ -83,7 +83,7 @@ var cashRegister = (function(){
     if(count === 0){
       memory.push(toNum, "-");
       display1.innerHTML += "-";
-      display.innerHTML = "";
+      display.innerHTML = "-";
     }
     console.log(memory);
     count = 1;
@@ -94,7 +94,7 @@ var cashRegister = (function(){
     if(count === 0){
       memory.push(toNum, "x");
       display1.innerHTML += "x";
-      display.innerHTML = "";
+      display.innerHTML = "x";
     }
     console.log(memory);
     count = 1;
@@ -105,7 +105,7 @@ var cashRegister = (function(){
     if(count === 0){
       memory.push(toNum, "÷");
       display1.innerHTML += "÷";
-      display.innerHTML = "";
+      display.innerHTML = "÷";
     }    
     console.log(memory);
     count = 1;
