@@ -1,5 +1,6 @@
 var cashRegister = (function(){
   var count = 0;
+  var canPress = false;
   var memory = [];
 
   var display1 = document.getElementById("display1");
@@ -48,60 +49,56 @@ var cashRegister = (function(){
       Calculator.subtract(memory);
       display.innerHTML = parseFloat(memory);
     }
-    // display.innerHTML = parseFloat(memory);
     count = 1;
     memory = [];
   }
 
   function addition(){
     var toNum = parseFloat(display.innerHTML);
-    memory.push(toNum, "+");
-    display1.innerHTML += "+";
-    // memory.push("+");
+    if(count === 0){
+      memory.push(toNum, "+");
+      display1.innerHTML += "+";
+    }
     console.log(memory);
-    // var addNum = Calculator.add(toNum);
-    // display.innerHTML = addNum;
     count = 1;
+    console.log(count);
   }
 
   function subtraction(){
     var toNum = parseFloat(display.innerHTML);
-    memory.push(toNum);
-    memory.push("-");
-    display1.innerHTML += "-";
+    if(count === 0){
+      memory.push(toNum, "-");
+      display1.innerHTML += "-";
+    }
     console.log(memory);
-    // var subNum = Calculator.subtract(toNum);
-    // display.innerHTML = subNum;
     count = 1;
   }
 
   function multiplication(){
     var toNum = parseFloat(display.innerHTML);
-    memory.push(toNum);
-    memory.push("x");
-    display1.innerHTML += "x";
+    if(count === 0){
+      memory.push(toNum, "x");
+      display1.innerHTML += "x";
+    }
     console.log(memory);
-    // var mulNum = Calculator.multiply(toNum);
-    // display.innerHTML = mulNum;
     count = 1;
   }
 
   function division(){
     var toNum = parseFloat(display.innerHTML);
-    memory.push(toNum);
-    memory.push("÷");
-    display1.innerHTML += "÷";
+    if(count === 0){
+      memory.push(toNum, "÷");
+      display1.innerHTML += "÷";
+    }    
     console.log(memory);
-    // var divNum = Calculator.divide(toNum);
-    // display.innerHTML = divNum;
     count = 1;
   }
 
   function clearDisplay(){
-    // display.innerHTML = Calculator.clearTotal(memory);
     memory = [];
     display.innerHTML = 0;
     display1.innerHTML = 0;
+    count = 1;
   }
 
   function showBalance(){
@@ -111,15 +108,15 @@ var cashRegister = (function(){
 
   function showNumber(){
     if(count === 0){
-      display.innerHTML = "";
       display.innerHTML += this.innerHTML;
-      display1.innerHTML = "";
       display1.innerHTML += this.innerHTML;
+      console.log(count);
     }else if(count === 1){
       display.innerHTML = "";
       display.innerHTML += this.innerHTML;
       display1.innerHTML += this.innerHTML;
       count = 0;
+      console.log(count);
     }
   }
 
