@@ -24,7 +24,8 @@
 
 #display{
   display: inline-block;
-  
+  display: none;
+
 }
 
 /*#display1{

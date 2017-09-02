@@ -38,6 +38,8 @@ var cashRegister = (function(){
   withdrawButton.addEventListener("click", withdraw);
 
   function displayTotal(){
+    display.style.display = "block";
+    display.style.display = "inline-block";
     var toNum = parseFloat(display.innerHTML);
     console.log(typeof toNum);
     console.log(toNum);
@@ -68,6 +70,7 @@ var cashRegister = (function(){
   }
 
   function addition(){
+    display.style.display = "none";
     var toNum = parseFloat(display.innerHTML);
     if(count === 0){
       memory.push(toNum, "+");
@@ -80,6 +83,7 @@ var cashRegister = (function(){
   }
 
   function subtraction(){
+    display.style.display = "none";
     var toNum = parseFloat(display.innerHTML);
     if(count === 0){
       memory.push(toNum, "-");
@@ -91,6 +95,7 @@ var cashRegister = (function(){
   }
 
   function multiplication(){
+    display.style.display = "none";
     var toNum = parseFloat(display.innerHTML);
     if(count === 0){
       memory.push(toNum, "x");
@@ -102,6 +107,7 @@ var cashRegister = (function(){
   }
 
   function division(){
+    display.style.display = "none";
     var toNum = parseFloat(display.innerHTML);
     if(count === 0){
       memory.push(toNum, "÷");
@@ -113,6 +119,7 @@ var cashRegister = (function(){
   }
 
   function clearDisplay(){
+    display.style.display = "none";
     Calculator.clearTotal(memory);
     display.innerHTML = 0;
     display1.innerHTML = 0;
@@ -125,6 +132,7 @@ var cashRegister = (function(){
   }
 
   function showNumber(){
+    display.style.display = "none";
     if(count === 0){
       display.innerHTML += this.innerHTML;
       display1.innerHTML += this.innerHTML;
