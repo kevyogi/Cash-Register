@@ -10,6 +10,10 @@
   background-color: black;
 }
 
+#total{
+  display: inline-block;
+}
+
 #disp{
   text-align: center;
   background-color: #0099ff;
@@ -18,13 +22,12 @@
   border-radius: 25px;
 }
 
-/*#display{
-  text-align: center;
-  background-color: turquoise;
+#display{
+  display: inline-block;
   
 }
 
-#display1{
+/*#display1{
   text-align: center;
   background-color: turquoise;
 }*/
@@ -78,6 +81,7 @@
 #equals{
   display: inline-block;
   margin-left: 3px;
+  color: #0099ff;
 }
 
 #clear{
