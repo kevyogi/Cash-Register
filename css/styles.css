@@ -6,9 +6,19 @@
   text-align: center;
   font-size: 30px;
   font-family: 'Baloo Tammudu', cursive;
+  color: white;
+  background-color: black;
 }
 
-#display{
+#disp{
+  text-align: center;
+  background-color: #0099ff;
+  margin-right: 400px;
+  margin-left: 400px;
+  border-radius: 25px;
+}
+
+/*#display{
   text-align: center;
   background-color: turquoise;
   
@@ -17,12 +27,12 @@
 #display1{
   text-align: center;
   background-color: turquoise;
-}
+}*/
 
 .numButLeft{
   display: inline-block;
   margin-right: 40px;
-  margin-left: -3px;
+  margin-left: -192px;
 
 }
 
@@ -41,14 +51,14 @@
 #add{
   display: inline-block;
   text-align: center;
-  /*background-color: green;*/
-  margin-right: 30px;
+  color: green;
+  margin-right: 40px;
 }
 
 #subtract{
   display: inline-block;
   text-align: center;
-  /*background-color: red;*/
+  color: red;
   margin-right: 40px;
 }
 
@@ -67,11 +77,12 @@
 
 #equals{
   display: inline-block;
+  margin-left: 3px;
 }
 
 #clear{
   display: inline-block;
-  background-color: white;
+  /*background-color: white;*/
   margin-right: -125px;
 
 }
@@ -79,6 +90,7 @@
 #balance{
   display: inline-block;
   margin-right: -207px;
+  margin-left: -5px;
 }
 
 #deposit{
@@ -88,6 +100,6 @@
 
 #withdraw{
   display: inline-block;
-  margin-right: -164px;
+  margin-right: -172px;
 
 }
