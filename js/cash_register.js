@@ -1,4 +1,5 @@
 var cashRegister = (function(){
+  
   var count = 0;
   var memory = [];
 
@@ -41,12 +42,9 @@ var cashRegister = (function(){
     display.style.display = "block";
     display.style.display = "inline-block";
     var toNum = parseFloat(display.innerHTML);
-    console.log(typeof toNum);
-    console.log(toNum);
     if(!isNaN(toNum)){
       display1.innerHTML = "(" + display1.innerHTML + ")";
       memory.push(toNum);
-      console.log(memory);
       for(var i = 0; i < memory.length; i++){
         Calculator.multiply(memory);
         Calculator.divide(memory);
@@ -77,9 +75,7 @@ var cashRegister = (function(){
       display1.innerHTML += "+";
       display.innerHTML = "+";
     }
-    console.log(memory);
     count = 1;
-    console.log(count);
   }
 
   function subtraction(){
@@ -90,7 +86,6 @@ var cashRegister = (function(){
       display1.innerHTML += "-";
       display.innerHTML = "-";
     }
-    console.log(memory);
     count = 1;
   }
 
@@ -102,7 +97,6 @@ var cashRegister = (function(){
       display1.innerHTML += "x";
       display.innerHTML = "x";
     }
-    console.log(memory);
     count = 1;
   }
 
@@ -113,8 +107,7 @@ var cashRegister = (function(){
       memory.push(toNum, "÷");
       display1.innerHTML += "÷";
       display.innerHTML = "÷";
-    }    
-    console.log(memory);
+    }
     count = 1;
   }
 
@@ -136,13 +129,11 @@ var cashRegister = (function(){
     if(count === 0){
       display.innerHTML += this.innerHTML;
       display1.innerHTML += this.innerHTML;
-      console.log(count);
     }else if(count === 1){
       display.innerHTML = "";
       display.innerHTML += this.innerHTML;
       display1.innerHTML += this.innerHTML;
       count = 0;
-      console.log(count);
     }
   }
 
@@ -152,7 +143,6 @@ var cashRegister = (function(){
     Calculator.clearTotal(memory);
     display.innerHTML = 0;
     display1.innerHTML = 0;
-    // count = 1;
   }
 
   function withdraw(){
@@ -161,7 +151,6 @@ var cashRegister = (function(){
     Calculator.clearTotal(memory);
     display.innerHTML = 0;
     display1.innerHTML = 0;
-    // count = 1;
   }
 
 })();
