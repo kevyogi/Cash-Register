@@ -28,16 +28,13 @@
 
 }
 
-/*#display1{
-  text-align: center;
-  background-color: turquoise;
-}*/
+#display1{
+}
 
 .numButLeft{
   display: inline-block;
   margin-right: 40px;
   margin-left: -192px;
-
 }
 
 .numBut{
@@ -70,13 +67,14 @@
   display: inline-block;
   text-align: center;
   margin-right: 40px;
+  color: #9933ff;
 }
 
 #divide{
   display: inline-block;
   text-align: center;
   margin-right: 40px;
-
+  color: #ffcc00;
 }
 
 #equals{

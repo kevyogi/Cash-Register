@@ -147,8 +147,8 @@ var cashRegister = (function(){
   }
 
   function deposit(){
-    var test = parseFloat(display.innerHTML);
-    Calculator.deposit(test);
+    var total = parseFloat(display.innerHTML);
+    Calculator.deposit(total);
     Calculator.clearTotal(memory);
     display.innerHTML = 0;
     display1.innerHTML = 0;
@@ -156,8 +156,8 @@ var cashRegister = (function(){
   }
 
   function withdraw(){
-    var test = parseFloat(display.innerHTML);
-    Calculator.withdraw(test);
+    var total = parseFloat(display.innerHTML);
+    Calculator.withdraw(total);
     Calculator.clearTotal(memory);
     display.innerHTML = 0;
     display1.innerHTML = 0;
