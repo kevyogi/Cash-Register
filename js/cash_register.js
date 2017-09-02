@@ -120,8 +120,13 @@ var cashRegister = (function(){
   }
 
   function showBalance(){
-    var newBalance = Calculator.getBalance();
-    display.innerHTML = newBalance;
+    display.style.display = "block";
+    display.style.display = "inline-block";
+    // var newBalance = Calculator.getBalance();
+    // display.innerHTML = Calculator.getBalance();
+    // console.log(Calculator.getBalance());
+    display.innerHTML = Calculator.getBalance();
+    console.log(display.innerHTML);
   }
 
   function showNumber(){
