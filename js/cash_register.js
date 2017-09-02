@@ -42,6 +42,7 @@ var cashRegister = (function(){
     console.log(typeof toNum);
     console.log(toNum);
     if(!isNaN(toNum)){
+      display1.innerHTML = "(" + display1.innerHTML + ")";
       memory.push(toNum);
       console.log(memory);
       for(var i = 0; i < memory.length; i++){
@@ -52,7 +53,7 @@ var cashRegister = (function(){
         display.innerHTML = parseFloat(memory);
       }
     }else if(isNaN(toNum)){
-      display1.innerHTML = display1.innerHTML.substring(0, (display1.innerHTML.length - 1));
+      display1.innerHTML = "(" + display1.innerHTML.substring(0, (display1.innerHTML.length - 1)) + ")";
       memory.splice((memory.length - 1), 1);
       for(var p = 0; p < memory.length; p++){
         Calculator.multiply(memory);
@@ -140,7 +141,7 @@ var cashRegister = (function(){
   function deposit(){
     var test = parseFloat(display.innerHTML);
     Calculator.deposit(test);
-    Calculator.clearTotal();
+    Calculator.clearTotal(memory);
     display.innerHTML = 0;
     display1.innerHTML = 0;
     // count = 1;
@@ -149,7 +150,7 @@ var cashRegister = (function(){
   function withdraw(){
     var test = parseFloat(display.innerHTML);
     Calculator.withdraw(test);
-    Calculator.clearTotal();
+    Calculator.clearTotal(memory);
     display.innerHTML = 0;
     display1.innerHTML = 0;
     // count = 1;
