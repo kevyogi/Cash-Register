@@ -10,46 +10,58 @@
 
 #display{
   text-align: center;
+  background-color: turquoise;
   
 }
 
 #display1{
   text-align: center;
+  background-color: turquoise;
 }
 
 .numButLeft{
   display: inline-block;
+  margin-right: 40px;
+  margin-left: -3px;
 
 }
 
 .numBut{
   display: inline-block;
   text-align: center;
+  margin-right: 40px;
 }
 
 .numButRight{
   display: inline-block;
   text-align: center;
+  margin-right: 40px;
 }
 
 #add{
   display: inline-block;
   text-align: center;
+  /*background-color: green;*/
+  margin-right: 30px;
 }
 
 #subtract{
   display: inline-block;
   text-align: center;
+  /*background-color: red;*/
+  margin-right: 40px;
 }
 
 #multiply{
   display: inline-block;
   text-align: center;
+  margin-right: 40px;
 }
 
 #divide{
   display: inline-block;
   text-align: center;
+  margin-right: 40px;
 
 }
 
@@ -59,20 +71,23 @@
 
 #clear{
   display: inline-block;
+  background-color: white;
+  margin-right: -125px;
 
 }
 
 #balance{
   display: inline-block;
-
+  margin-right: -207px;
 }
 
 #deposit{
   display: inline-block;
-
+  margin-right: -158px;
 }
 
 #withdraw{
   display: inline-block;
+  margin-right: -164px;
 
 }
