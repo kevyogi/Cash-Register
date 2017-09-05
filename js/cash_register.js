@@ -125,6 +125,7 @@ var cashRegister = (function(){
     display.innerHTML = 0;
     display1.innerHTML = 0;
     count = 1;
+    decimalPlace = 0;
   }
 
   function showBalance(){
