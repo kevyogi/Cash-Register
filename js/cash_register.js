@@ -66,7 +66,7 @@ var cashRegister = (function(){
         display.innerHTML = parseFloat(memory);
       }
     }
-    count = 0;
+    count = 2;
     memory = [];
     decimalPlace = 1;
   }
@@ -74,7 +74,7 @@ var cashRegister = (function(){
   function addition(){
     display.style.display = "none";
     var toNum = parseFloat(display.innerHTML);
-    if(count === 0){
+    if(count === 0 || count === 2){
       memory.push(toNum, "+");
       display1.innerHTML += "+";
       display.innerHTML = "+";
@@ -86,7 +86,7 @@ var cashRegister = (function(){
   function subtraction(){
     display.style.display = "none";
     var toNum = parseFloat(display.innerHTML);
-    if(count === 0){
+    if(count === 0 || count === 2){
       memory.push(toNum, "-");
       display1.innerHTML += "-";
       display.innerHTML = "-";
@@ -98,7 +98,7 @@ var cashRegister = (function(){
   function multiplication(){
     display.style.display = "none";
     var toNum = parseFloat(display.innerHTML);
-    if(count === 0){
+    if(count === 0 || count === 2){
       memory.push(toNum, "x");
       display1.innerHTML += "x";
       display.innerHTML = "x";
@@ -110,7 +110,7 @@ var cashRegister = (function(){
   function division(){
     display.style.display = "none";
     var toNum = parseFloat(display.innerHTML);
-    if(count === 0){
+    if(count === 0 || count === 2){
       memory.push(toNum, "÷");
       display1.innerHTML += "÷";
       display.innerHTML = "÷";
