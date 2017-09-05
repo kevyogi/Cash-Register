@@ -68,7 +68,7 @@ var cashRegister = (function(){
     }
     count = 0;
     memory = [];
-    decimalPlace = 0;
+    decimalPlace = 1;
   }
 
   function addition(){
