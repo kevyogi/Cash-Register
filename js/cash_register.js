@@ -1,6 +1,7 @@
 var cashRegister = (function(){
   
   var count = 0;
+  var decimalPlace = 0;
   var memory = [];
 
   var display1 = document.getElementById("display1");
@@ -17,6 +18,7 @@ var cashRegister = (function(){
   var getBalance = document.getElementById("balance");
   var depositButton = document.getElementById("deposit");
   var withdrawButton = document.getElementById("withdraw");
+  var decimalButton = document.getElementById("decimal");
 
   for(var i = 0; i < numButtons.length; i++){
     numButtons[i].addEventListener("click", showNumber);
@@ -37,6 +39,7 @@ var cashRegister = (function(){
   equalButton.addEventListener("click", displayTotal);
   depositButton.addEventListener("click", deposit);
   withdrawButton.addEventListener("click", withdraw);
+  decimalButton.addEventListener("click", decimal);
 
   function displayTotal(){
     display.style.display = "block";
@@ -65,6 +68,7 @@ var cashRegister = (function(){
     }
     count = 0;
     memory = [];
+    decimalPlace = 0;
   }
 
   function addition(){
@@ -76,6 +80,7 @@ var cashRegister = (function(){
       display.innerHTML = "+";
     }
     count = 1;
+    decimalPlace = 0;
   }
 
   function subtraction(){
@@ -87,6 +92,7 @@ var cashRegister = (function(){
       display.innerHTML = "-";
     }
     count = 1;
+    decimalPlace = 0;
   }
 
   function multiplication(){
@@ -98,6 +104,7 @@ var cashRegister = (function(){
       display.innerHTML = "x";
     }
     count = 1;
+    decimalPlace = 0;
   }
 
   function division(){
@@ -109,6 +116,7 @@ var cashRegister = (function(){
       display.innerHTML = "÷";
     }
     count = 1;
+    decimalPlace = 0;
   }
 
   function clearDisplay(){
@@ -129,16 +137,40 @@ var cashRegister = (function(){
     console.log(display.innerHTML);
   }
 
-  function showNumber(){
+  function decimal(){
     display.style.display = "none";
-    if(count === 0){
+    if(count === 0 && decimalPlace === 0){
       display.innerHTML += this.innerHTML;
       display1.innerHTML += this.innerHTML;
-    }else if(count === 1){
+      decimalPlace = 1;
+    }else if(count === 1 && decimalPlace === 0){
       display.innerHTML = "";
       display.innerHTML += this.innerHTML;
       display1.innerHTML += this.innerHTML;
       count = 0;
+      decimalPlace = 1;
+    }
+  }
+
+  function showNumber(){
+    display.style.display = "none";
+    if(count === 0 && decimalPlace === 0){
+      display.innerHTML += this.innerHTML;
+      display1.innerHTML += this.innerHTML;
+    }else if(count === 1 && decimalPlace === 0){
+      display.innerHTML = "";
+      display.innerHTML += this.innerHTML;
+      display1.innerHTML += this.innerHTML;
+      count = 0;
+    }else if(count === 0 && decimalPlace > 0 && decimalPlace < 3){
+      display.innerHTML += this.innerHTML;
+      display1.innerHTML += this.innerHTML;
+      decimalPlace ++; 
+    }else if(count === 1 && decimalPlace > 0 && decimalPlace < 3){
+      display.innerHTML = "";
+      display.innerHTML += this.innerHTML;
+      display1.innerHTML += this.innerHTML;
+      decimalPlace++;
     }
   }
 
